@@ -10,6 +10,7 @@ curl "http://admin:admin@localhost:9000/api/webhooks/create" -X POST -d "name=je
 curl -X POST -u admin:admin "http://localhost:9000/api/settings/set?key=sonar.forceAuthentication&value=false"
 curl "http://admin:admin@localhost:9000/api/qualitygates/create" -X POST -d  "name=myqualitygate"
 curl "http://admin:admin@localhost:9000/api/qualitygates/create_condition" -X POST -d  "gateName=myqualitygate&error=1&metric=sqale_rating&op=GT"
+curl "http://admin:admin@localhost:9000/api/qualitygates/create_condition" -X POST -d  "gateName=myqualitygate&error=0&metric= new_code_smells&op=GT"
 curl "http://admin:admin@localhost:9000/api/qualitygates/set_as_default" -X POST -d  "name=myqualitygate"
 echo "SonarQube setup with curl"
 sleep infinity
